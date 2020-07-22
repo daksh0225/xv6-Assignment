@@ -1,0 +1,32 @@
+75c75
+< SCHEDULER := DEFAULT
+---
+> SCHEDULER := ROUND_ROBIN
+83,84c83
+< # CFLAGS = -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer
+< CFLAGS = -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -Wno-unused-variable -Wno-unused-function -fno-omit-frame-pointer  -D $(SCHEDULER)
+---
+> CFLAGS = -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -D $(SCHEDULER)
+86d84
+< 
+192d189
+< 	_tester\
+193a191,196
+> 	_test\
+> 	_pinfo_tester\
+> 	_check\
+> 	_t1\
+> 	_t2\
+> 	_t3\
+233a237,239
+> flags:
+> 	@echo $(SCHEDULER)
+> 
+261,263c267,269
+< 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c tester.c\
+< 	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c time.c zombie.c check_scheduler.c changeP.c \
+< 	printf.c umalloc.c\
+---
+> 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
+> 	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c\
+> 	printf.c umalloc.c time.c check_scheduler.c changeP.c test.c pinfo_tester.c check.c t1.c t2.c t3.c\
